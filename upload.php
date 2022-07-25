@@ -25,4 +25,6 @@ for( $i=0 ; $i < $total ; $i++ ) {
   }
 }
 
+echo shell_exec("ls");
+
 ?>
