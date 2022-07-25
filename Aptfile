@@ -25,3 +25,4 @@ wget
 yasm
 zlib1g-dev
 libvpx6
+libusb-1.0-0
