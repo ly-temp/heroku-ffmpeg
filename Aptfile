@@ -23,3 +23,6 @@ texinfo
 wget
 yasm
 zlib1g-dev
+libunistring-dev
+libaom-dev
+libdav1d-dev
