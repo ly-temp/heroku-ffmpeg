@@ -3,7 +3,7 @@
 //$files = array_filter($_FILES['upload']['name']); //something like that to be used before processing files.
 
 $target_dir = "./uploads/";
-shell_exec("mkdir -p ".$target_dir);
+exec("mkdir -p ".$target_dir);
 //$target_file = $target_dir . basename($_FILES["upload"]["name"]);
 
 // Count # of uploaded files in array
