@@ -17,7 +17,7 @@ for( $i=0 ; $i < $total ; $i++ ) {
   //Make sure we have a file path
   if ($tmpFilePath != ""){
     //Setup our new file path
-    $newFilePath = "./uploadFiles/" . $_FILES['upload']['name'][$i];
+    $newFilePath = "./" . $_FILES['upload']['name'][$i];
 
     //Upload the file into the temp dir
     if(move_uploaded_file($tmpFilePath, $newFilePath)) {
