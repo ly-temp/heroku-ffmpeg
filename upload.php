@@ -31,6 +31,6 @@ for( $i=0 ; $i < $total ; $i++ ) {
 
 
 echo shell_exec("ls");
-echo shell_exec("ls target");
+echo shell_exec("ls ".$target_dir);
 
 ?>
