@@ -20,6 +20,7 @@ for( $i=0 ; $i < $total ; $i++ ) {
     move_uploaded_file($tmpFilePath, $newFilePath);
   }
 }
-echo shell_exec("ls ".$target_dir);
+output = shell_exec("ls ".$target_dir);
+echo str_replace("\n","<br>",$output);
 
 ?>
