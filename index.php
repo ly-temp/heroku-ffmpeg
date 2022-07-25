@@ -8,6 +8,7 @@
   <input name="upload[]" type="file" multiple />
   <input type="submit" value="Send files" />
 </form>
-  
+
+<a href="list_file.php">list file</a>
 </body>
 </html>
