@@ -17,10 +17,11 @@ for( $i=0 ; $i < $total ; $i++ ) {
     $newFilePath = $target_dir . $_FILES['upload']['name'][$i];
 
     //Upload the file into the temp dir
-    move_uploaded_file($tmpFilePath, $newFilePath);
+    if(move_uploaded_file($tmpFilePath, $newFilePath)){
+      echo "success: ".$_FILES['upload']['name'][$i]."<br>";
+    }
   }
 }
-$output = shell_exec("ls ".$target_dir);
-echo str_replace("\n","<br>",$output);
+
 
 ?>
