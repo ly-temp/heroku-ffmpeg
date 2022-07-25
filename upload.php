@@ -2,8 +2,8 @@
 
 //$files = array_filter($_FILES['upload']['name']); //something like that to be used before processing files.
 
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["upload"]["name"]);
+//$target_dir = "uploads/";
+//$target_file = $target_dir . basename($_FILES["upload"]["name"]);
 
 // Count # of uploaded files in array
 $total = count($_FILES['upload']['name']);
