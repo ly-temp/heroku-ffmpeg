@@ -21,16 +21,9 @@ for( $i=0 ; $i < $total ; $i++ ) {
     $newFilePath = $target_dir . $_FILES['upload']['name'][$i];
 
     //Upload the file into the temp dir
-    if(move_uploaded_file($tmpFilePath, $newFilePath)) {
-
-      //Handle other code here
-
-    }
+    move_uploaded_file($tmpFilePath, $newFilePath);
   }
 }
-
-
-echo shell_exec("ls");
 echo shell_exec("ls ".$target_dir);
 
 ?>
