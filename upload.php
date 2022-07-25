@@ -2,7 +2,7 @@
 
 //$files = array_filter($_FILES['upload']['name']); //something like that to be used before processing files.
 
-//$target_dir = "uploads/";
+$target_dir = "./uploads/";
 //$target_file = $target_dir . basename($_FILES["upload"]["name"]);
 
 // Count # of uploaded files in array
@@ -17,7 +17,7 @@ for( $i=0 ; $i < $total ; $i++ ) {
   //Make sure we have a file path
   if ($tmpFilePath != ""){
     //Setup our new file path
-    $newFilePath = "./" . $_FILES['upload']['name'][$i];
+    $newFilePath = $target_dir . $_FILES['upload']['name'][$i];
 
     //Upload the file into the temp dir
     if(move_uploaded_file($tmpFilePath, $newFilePath)) {
@@ -29,5 +29,6 @@ for( $i=0 ; $i < $total ; $i++ ) {
 }
 
 echo shell_exec("ls");
+echo shell_exec("ls target");
 
 ?>
