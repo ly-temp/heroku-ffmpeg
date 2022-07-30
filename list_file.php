@@ -13,10 +13,10 @@ handle_ls("o", $output);
 
 
 //input is pure string
-function handle_ls($output){
+function handle_ls($prefix, $output){
     $explode = explode("\n", $output);
     array_pop($explode);
-    print_options($explode);
+    print_options($prefix, $explode);
 }
 
 function print_options($prefix, $output){
