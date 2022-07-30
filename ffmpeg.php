@@ -4,6 +4,7 @@
 $prefix = "u";
 $file = "uploads.list";
 $file_list = explode("\n", shell_exec("cat ".$file));
+array_pop($file_list);
 print_r($file_list);
   for($i = 0; !empty($_POST[$prefix.$i]); $i++){
     echo $i."->".$_POST[$prefix.'c'.$i].'<br>';
