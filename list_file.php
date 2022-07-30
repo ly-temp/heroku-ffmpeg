@@ -43,7 +43,7 @@ for($i = 0; $i < count($output); $i++){
     <input type="text" name="c'.$i.'">
     </select><br>';
   }
-  echo '<input type="submit"></form>';
+  echo '<button type="submit">submit</button></form>';
 
 }
 ?>
