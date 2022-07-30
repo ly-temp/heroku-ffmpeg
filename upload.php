@@ -22,6 +22,6 @@ for( $i=0 ; $i < $total ; $i++ ) {
     }
   }
 }
-
-
+echo '<a href=/>back</a>';
+exit;
 ?>
