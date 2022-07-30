@@ -42,7 +42,7 @@ for($i = 0; $i < count($output); $i++){
     <option value="3">audio to db</option>
     <option value="4">change format</option>
     <option value="-1">command</option>
-    <input type="text" name="c'.$i.'">
+    <input type="text" name="'.$prefix.'c'.$i.'">
     </select><br>';
   }
   echo '<button type="submit">submit</button></form>';
