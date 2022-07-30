@@ -3,15 +3,14 @@ $target_dir = "./uploads";
 $out_dir = "./output";
 $sep = "~~~~~~~~~";
 echo $sep."uploads".$sep."<br>";
-$output = shell_exec("ls ".$target_dir);
-$output = explode("\n", $output);
-print_options($output);
+$output = shell_exec("ls | tee uploads.list".$target_dir);
+handle_ls($output);
 
 exec("mkdir -p ".$out_dir);
 echo $sep."output".$sep."<br>";
-$output = shell_exec("ls ".$out_dir);
-$output = explode("\n", $output);
-print_options($output);
+$output = shell_exec("ls | tee output.list".$out_dir);
+handle_ls($output);
+
 
 //input is pure string
 function handle_ls($output){
