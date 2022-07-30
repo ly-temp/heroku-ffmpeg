@@ -4,7 +4,7 @@
 $prefix = "u";
   for($i = 0; !empty($_POST[$prefix.$i]); $i++){
     echo $i."->".$_POST[$prefix.'c'.$i].'<br>';
-    switch($_POST[$i]){
+    switch($_POST[$prefix.$i]){
       //case 1://no action
         //break;
       case 2://nokia
