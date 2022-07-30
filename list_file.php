@@ -5,14 +5,19 @@ $sep = "~~~~~~~~~";
 echo $sep."uploads".$sep."<br>";
 $output = shell_exec("ls ".$target_dir);
 $output = explode("\n", $output);
-print_options($output)
+print_options($output);
 
 exec("mkdir -p ".$out_dir);
 echo $sep."output".$sep."<br>";
 $output = shell_exec("ls ".$out_dir);
 $output = explode("\n", $output);
-print_options($output)
+print_options($output);
 
+//input is pure string
+function handle_ls($output){
+    $explode = explode("\n", $output);
+    print_options($output);
+}
 
 function print_options($output){
 /**mode
