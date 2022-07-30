@@ -1,5 +1,5 @@
 <?php
-  for($i = 0; isset($_POST[$i]); $i++){
+  for($i = 0; !empty($_POST[$i]); $i++){
     echo $i."->"$_POST['c'.$i].'<br>';
   }
 ?>
