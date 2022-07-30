@@ -14,7 +14,8 @@ handle_ls($output);
 
 //input is pure string
 function handle_ls($output){
-    print_options(array_pop(explode("\n", $output)));
+    $explode = array_pop(explode("\n", $output));
+    print_options($explode);
 }
 
 function print_options($output){
