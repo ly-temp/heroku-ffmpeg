@@ -2,6 +2,7 @@
  //prefix u: upload folder
  //       o: output folder
 $prefix = "u";
+$folder = $prefix == "u" ? "uploads/" : "output/";
 $file = "uploads.list";
 $file_list = explode("\n", shell_exec("cat ".$file));
 array_pop($file_list);
@@ -11,6 +12,9 @@ array_pop($file_list);
       //case 1://no action
         //break;
       case 2://nokia
+        chdir($folder);
+        $suffix = has_video($file_list[$i]) ? ".3gp" : ".mp3";
+        exec("../bash/nokia_LY.sh ".$suffix." ".$file_list[$i]);
         break;
       case 3://audio to db
         break;
