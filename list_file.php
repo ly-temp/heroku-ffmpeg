@@ -21,10 +21,10 @@ function handle_ls($output){
 
 function print_options($output){
 /**mode
-//0: no action
-//1: nokia
-//2: audio to db
-//3: change format
+//1: no action
+//2: nokia
+//3: audio to db
+//4: change format
 //
 //-1: user define command
 */
@@ -35,10 +35,10 @@ function print_options($output){
 echo '<form action="/ffmpeg.php"  method="post">';
 for($i = 0; $i < count($output); $i++){
     echo $output[$i].'<select name="'.$i.'">
-    <option value="0">no action</option>
-    <option value="1">nokia</option>
-    <option value="2">audio to db</option>
-    <option value="3">change format</option>
+    <option value="1">no action</option>
+    <option value="2">nokia</option>
+    <option value="3">audio to db</option>
+    <option value="4">change format</option>
     <option value="-1">command</option>
     <input type="text" name="c'.$i.'">
     </select><br>';
