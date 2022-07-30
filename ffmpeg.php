@@ -1,7 +1,9 @@
 <?php
- 
-  for($i = 0; !empty($_POST[$i]); $i++){
-    echo $i."->".$_POST['c'.$i].'<br>';
+ //prefix u: upload folder
+ //       o: output folder
+$prefix = "u";
+  for($i = 0; !empty($_POST[$prefix.$i]); $i++){
+    echo $i."->".$_POST[$prefix.'c'.$i].'<br>';
     switch($_POST[$i]){
       //case 1://no action
         //break;
