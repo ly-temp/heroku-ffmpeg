@@ -3,12 +3,12 @@ $target_dir = "./uploads";
 $out_dir = "./output";
 $sep = "~~~~~~~~~";
 echo $sep."uploads".$sep."<br>";
-$output = shell_exec("ls | tee uploads.list".$target_dir);
+$output = shell_exec("ls ".$target_dir." | tee uploads.list");
 handle_ls($output);
 
 exec("mkdir -p ".$out_dir);
 echo $sep."output".$sep."<br>";
-$output = shell_exec("ls | tee output.list".$out_dir);
+$output = shell_exec("ls ".$out_dir." | tee output.list");
 handle_ls($output);
 
 
