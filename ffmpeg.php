@@ -16,8 +16,9 @@ chdir($folder);
       case 2://nokia
         $suffix = has_video($file_list[$i]) ? ".3gp" : ".mp3";
         $out_file = shell_exec("../bash/nokia_LY.sh ".$suffix.' "'.$file_list[$i].'" | tail -1');
+        $out_file = str_replace("\n", "", $out_file);
         echo "HIHI=";
-        echo 'mv "'.$out_file.'" output/';
+        exec('mv "'.$out_file.'" output/');
         break;
       case 3://audio to db
         
