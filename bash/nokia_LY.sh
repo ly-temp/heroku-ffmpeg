@@ -57,4 +57,4 @@ while
   echo '------'
   [ "$diff" != "0" ]
 do true; done
-echo "output=$out_f"
+echo "$out_f"
