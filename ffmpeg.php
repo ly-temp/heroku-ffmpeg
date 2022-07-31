@@ -13,7 +13,6 @@ chdir($folder);
       //case 1://no action
         //break;
       case 2://nokia
-        chdir($folder);
         $suffix = has_video($file_list[$i]) ? ".3gp" : ".mp3";
         exec("../bash/nokia_LY.sh ".$suffix." ".$file_list[$i]);
         break;
