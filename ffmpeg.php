@@ -23,6 +23,7 @@ function call_ffmpeg($prefix){
          exec('mv "'.$out_file.'" ../output/');
          break;
        case 3://audio to db
+         $out_file = shell_exec("../bash/to_db_LY.sh ".$suffix.' "'.$file_list[$i].'" | tail -1');
 
          break;
        case 4://change format
@@ -31,6 +32,7 @@ function call_ffmpeg($prefix){
          break;
      }
    }
+  chdir("../");
 }
 
   function has_video($file){
