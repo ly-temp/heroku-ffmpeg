@@ -12,7 +12,7 @@ exec("mkdir -p ".$out_dir);
 echo $sep."output".$sep."<br>";
 $output = shell_exec("ls ".$out_dir." | tee output.list");
 handle_ls("o", $output);
-echo  'timeout:<input type="text" name=timeout>';
+echo  'timeout:<input type="text" name=timeout value=200>';
 echo '<button type="submit">submit</button></form>';
 
 //input is pure string
