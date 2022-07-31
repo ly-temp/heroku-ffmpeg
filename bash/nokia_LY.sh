@@ -1,3 +1,4 @@
+#!/bin/sh
 #input: [output suffix] [input file]
 target_db=-54.4
 out_f="out.mp3"
