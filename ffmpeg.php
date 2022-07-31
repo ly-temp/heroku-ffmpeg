@@ -4,8 +4,8 @@ exec("chmod +x bash/*.sh");
  //       o: output folder
 call_ffmpeg("u");
 call_ffmpeg("o");
-usleep(200);
-
+usleep($_POST["timeout"]);
+ 
 function call_ffmpeg($prefix){
  $folder = $prefix == "u" ? "uploads/" : "output/";
  $file = $prefix == "u" ? "uploads.list" : "output.list";
