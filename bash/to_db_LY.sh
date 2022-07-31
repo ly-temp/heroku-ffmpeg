@@ -45,3 +45,4 @@ while
   echo '------'
   [ "$diff" != "0" ]
 do true; done
+echo "$out_f"
