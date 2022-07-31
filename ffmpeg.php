@@ -33,8 +33,8 @@ function call_ffmpeg($prefix){
        case -1:
          break;
      }
+     $i++;
    }
-  $i++;
   chdir("../");
 }
 
