@@ -1,4 +1,5 @@
 <?php
+exec("chmod +x bash/*.sh");
  //prefix u: upload folder
  //       o: output folder
 $prefix = "u";
