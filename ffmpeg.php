@@ -21,7 +21,7 @@ function call_ffmpeg($prefix){
        case 2://nokia
          $suffix = has_video($file_list[$i]) ? ".3gp" : ".mp3";
          //$out_file = shell_exec("../bash/nokia_LY.sh ".$suffix.' "'.$file_list[$i].'" | tail -1');
-         exec("../bash/nokia_LY.sh ".$suffix.' "'.$file_list[$i].'" &');
+         exec("../bash/nokia_LY.sh ".$suffix.' "'.$file_list[$i].'" 2>&1 &');
          break;
        case 3://audio to db
          $out_file = shell_exec("../bash/to_db_LY.sh ".$suffix.' "'.$file_list[$i].'" | tail -1');
