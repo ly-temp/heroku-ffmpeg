@@ -57,4 +57,4 @@ while
   echo '------'
   [ "$diff" != "0" ]
 do true; done
-echo "$out_f"
+$(printf "$out_f\n" >> complete.list)
