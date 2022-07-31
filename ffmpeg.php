@@ -39,6 +39,6 @@ function call_ffmpeg($prefix){
 }
 
   function has_video($file){
-    return shell_exec("ffprobe -v error -select_streams v:0 -show_entries stream=codec_type -of csv=p=0 ".$file) === "\n";
+    return !empty(shell_exec("ffprobe -v error -select_streams v:0 -show_entries stream=codec_type -of csv=p=0 ".$file));
   }
 ?>
