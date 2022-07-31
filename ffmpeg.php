@@ -6,6 +6,7 @@ $folder = $prefix == "u" ? "uploads/" : "output/";
 $file = "uploads.list";
 $file_list = explode("\n", shell_exec("cat ".$file));
 array_pop($file_list);
+chdir($folder);
   for($i = 0; !empty($_POST[$prefix.$i]); $i++){
     echo $i.":".$file_list[$i]."->".$_POST[$prefix.'c'.$i].'<br>';
     switch($_POST[$prefix.$i]){
