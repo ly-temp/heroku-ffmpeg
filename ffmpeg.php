@@ -11,7 +11,9 @@ function call_ffmpeg($prefix){
  $file_list = explode("\n", shell_exec("cat ".$file));
  array_pop($file_list);
  chdir($folder);
-   for($i = 0; !empty($_POST[$prefix.$i]); $i++){
+   //for($i = 0; !empty($_POST[$prefix.$i]); $i++){
+   $i = 0;
+   while(!empty($_POST[$prefix.$i])){
      echo $i.":".$file_list[$i]."->".$_POST[$prefix.'c'.$i].'<br>';
      switch($_POST[$prefix.$i]){
        //case 1://no action
@@ -32,6 +34,7 @@ function call_ffmpeg($prefix){
          break;
      }
    }
+  $i++;
   chdir("../");
 }
 
