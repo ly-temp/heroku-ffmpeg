@@ -15,6 +15,7 @@ chdir($folder);
         //break;
       case 2://nokia
         $suffix = has_video($file_list[$i]) ? ".3gp" : ".mp3";
+        echo "../bash/nokia_LY.sh ".$suffix." ".$file_list[$i];
         exec("../bash/nokia_LY.sh ".$suffix." ".$file_list[$i]);
         break;
       case 3://audio to db
