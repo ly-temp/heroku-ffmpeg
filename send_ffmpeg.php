@@ -3,6 +3,8 @@ $target_dir = "./uploads";
 $out_dir = "./output";
 $sep = "~~~~~~~~~";
 echo $sep."uploads".$sep."<br>";
+
+echo '<form action="/ffmpeg.php"  method="post">';
 $output = shell_exec("ls ".$target_dir." | tee uploads.list");
 handle_ls("u", $output);
 
@@ -10,7 +12,7 @@ exec("mkdir -p ".$out_dir);
 echo $sep."output".$sep."<br>";
 $output = shell_exec("ls ".$out_dir." | tee output.list");
 handle_ls("o", $output);
-
+echo '<button type="submit">submit</button></form>';
 
 //input is pure string
 function handle_ls($prefix, $output){
@@ -34,7 +36,6 @@ function print_options($prefix, $output){
 //post parameter:
 //$i->option
 //c$i->command/value
-echo '<form action="/ffmpeg.php"  method="post">';
 for($i = 0; $i < count($output); $i++){
     echo $output[$i].'<select name="'.$prefix.$i.'">
     <option value="1">no action</option>
@@ -45,7 +46,6 @@ for($i = 0; $i < count($output); $i++){
     <input type="text" name="'.$prefix.'c'.$i.'">
     </select><br>';
   }
-  echo '<button type="submit">submit</button></form>';
 
 }
 ?>
