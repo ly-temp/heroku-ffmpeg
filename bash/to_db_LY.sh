@@ -1,3 +1,4 @@
+#!/bin/bash
 #input: [output suffix] [input file] [volume]
 target_db=$3
 if [ "$1" = "" ]; then
