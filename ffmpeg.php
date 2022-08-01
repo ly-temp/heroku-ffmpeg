@@ -22,11 +22,10 @@ function call_ffmpeg($prefix){
        case 2://nokia
          //$suffix = has_video($file_list[$i]) ? ".3gp" : ".mp3";
          //$out_file = shell_exec("../bash/nokia_LY.sh ".$suffix.' "'.$file_list[$i].'" | tail -1');
-         exec("../bash/nokia_LY.sh ".$suffix.'" '.$file_list[$i].'" > /dev/null 2>/dev/null &');
+         exec('../bash/nokia_LY.sh "'.$file_list[$i].'" "'.$suffix.'" > /dev/null 2>/dev/null &');
          break;
        case 3://audio to db
-         exec("../bash/to_db_LY.sh ".$suffix.'" '.$file_list[$i].'" > /dev/null 2>/dev/null &');
-
+         exec('../bash/to_db_LY.sh "'.$file_list[$i].'" "'.$_POST[$prefix.'c'.$i].'" > /dev/null 2>/dev/null &');
          break;
        case 4://change format
          break;
