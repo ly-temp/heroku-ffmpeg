@@ -2,6 +2,7 @@
   $dom = new DOMDocument('1.0', 'utf-8');
 
   $output_file = shell_exec("ls output/");
+  $output_file = explode("\n", $output_file);
   array_pop($output_file);
   foreach($output_file as $file){
     $anchor = $dom->createElement('a', $file);
