@@ -13,5 +13,7 @@
 <a href="send_ffmpeg.php">list file</a>
 <br>
 <a href="move_to_output.php">move output file</a>
+<br>
+<a href="file_manage.php">download / manage</a>
 </body>
 </html>
