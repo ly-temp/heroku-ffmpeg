@@ -1,16 +1,13 @@
 #!/bin/bash
-#input: [output suffix] [input file]
+#input: [input file] [output suffix]
 target_db=-54.4
-out_f="out.mp3"
-suffix=$1
+suffix="$2"
 
-if [ "$suffix" = ".mp3" ]; then
-	type="a"
-else
-	if [ "$suffix" = ".3gp" ]; then
-		type="v"
-	fi
+if [ "$suffix" = "" ]; then
+	[ $(ffprobe -v error -select_streams v:0 -show_entries stream=codec_type -of csv=p=0 "$1" | wc -w) -eq 0 ] && type="a" || type="v"
+	[ "$type" = "v" ] && suffix=".3gp" || suffix=".mp3"
 fi
+
 echo "type: $type"
 
 diff_db(){
@@ -29,8 +26,8 @@ diff_db(){
 	echo $diff
 }
 
-echo "in file: $2"
-file=$2
+echo "in file: $1"
+file=$1
 diff=$(diff_db)
 value=0
 str_value=""
@@ -42,13 +39,13 @@ while
 
   value=$(echo "$value" + "$diff" | bc)
   str_value=$value"dB"
-  out_f="${2%.*}[$str_value]$suffix"
+  out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
   if [ "$type" = "a" ]; then
-		output=$(ffmpeg -i "$2" -filter:a "volume=$str_value" -y "$out_f" 2>&1)
+		$(ffmpeg -i "$1" -filter:a "volume=$str_value" -y "$out_f" >/dev/null 2>&1)
   else
 	if [ "$type" = "v" ]; then
-		output=$(ffmpeg -i "$2" -r 30 -s 352*288 -acodec aac -filter:a "volume=$str_value" -y "$out_f" 2>&1)
+		$(ffmpeg -i "$1" -r 30 -s 352*288 -acodec aac -filter:a "volume=$str_value" -y "$out_f" >/dev/null 2>&1)
 	fi
   fi
   file=$out_f
