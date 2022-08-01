@@ -3,7 +3,7 @@
 
   $output_file = shell_exec("ls output/");
   array_pop($output_file);
-  for($output_file as $file){
+  foreach($output_file as $file){
     $anchor = $dom->createElement('a', $file);
     $anchor->setAttribute('href', $file);
     link_anchor($anchor, "/output/".$file);
