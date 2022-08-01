@@ -15,7 +15,8 @@
     
     $anchor = $dom->createElement('a', "preview");
     link_anchor($anchor, "/output/".$file);
-    $dom->appendChild($anchor);    
+    $dom->appendChild($anchor);  
+    add_br($dom);
   }
 
   echo $dom->saveHTML();
