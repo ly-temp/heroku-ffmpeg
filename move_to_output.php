@@ -1,6 +1,6 @@
 <?php
   $output=shell_exec("cat complete.list");
-  if(shell_exec("echo".$output." | wc -w") != 0){
+  if(shell_exec("echo ".$output." | wc -w") != 0){
     exec("echo > complete.list");
     $file = explode("\n", $output);
     array_pop($file);
