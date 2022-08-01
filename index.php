@@ -10,5 +10,6 @@
 </form>
 
 <a href="send_ffmpeg.php">list file</a>
+<a href=move_to_output.php">move output file</a>
 </body>
 </html>
