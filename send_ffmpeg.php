@@ -50,3 +50,9 @@ for($i = 0; $i < count($output); $i++){
 
 }
 ?>
+<script>
+    function changeSelected(id, index){
+        var element = document.getElementById(id);
+        element.selectedIndex = index;
+    };
+</script>
