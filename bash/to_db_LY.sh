@@ -30,10 +30,18 @@ while
   out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
   output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -y "$out_f" 2>&1)
+  
+  #fix 3gp cannot select codec
+  if [ $(grep "Default encoder for format 3gp (codec amr_nb) is probably disabled." <<< "$output" | wc -w) -gt 0 ]; then
+  	output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec libx264 -acodec aac -y "$out_f" 2>&1)
+  fi
+  
+  echo "$output"
   file="$out_f"
   diff=$(diff_db)
   echo "diff: ${diff}dB"
   echo '------'
   [ "$diff" != "0" ]
 do true; done
+echo "$out_f"
 $(printf "$out_f\n" >> ../complete.list)
