@@ -34,10 +34,7 @@ while
   #fix 3gp cannot select codec
   if [ $(grep "Default encoder for format 3gp (codec amr_nb) is probably disabled." <<< "$output" | wc -w) -gt 0 ]; then
   	output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec libx264 -acodec aac -y "$out_f" 2>&1)
-  fi
-  
-  echo "$output"
-  
+  fi  
   file="$out_f"
   diff=$(diff_db)
   echo "diff: ${diff}dB"
