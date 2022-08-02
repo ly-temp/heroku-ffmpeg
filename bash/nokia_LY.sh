@@ -28,7 +28,7 @@ while
   fi
 
   value=$(echo "$value" + "$diff" | bc)
-  str_value=$value"dB"
+  str_value="$value""dB"
   out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
   if [ "$type" = "a" ]; then
