@@ -1,7 +1,7 @@
 <?php
-  echo '~~~output~~~';
+  echo '~~~output~~~<br>';
   echo_folder("output/");
-  echo '~~~uploads~~~';
+  echo '~~~uploads~~~<br>';
   echo_folder("uploads/");
 
   function echo_folder($folder){
