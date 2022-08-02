@@ -11,6 +11,7 @@ fi
 diff_db(){
 	current_db=($(ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2))
 	diff=$(echo "$target_db - $current_db" | bc)
+	echo "$current_db" >> log.txt
 	echo "$diff"
 }
 
