@@ -7,7 +7,9 @@
     foreach($file as $f){
       if(file_exists('uploads/'.$f)){
         exec('mv "uploads/'.$f.'" output/ > /dev/null 2>/dev/null &');
-        echo $f."<br>";
+        echo "uploads: ".$f."<br>";
+      }else{
+        echo "output: ".$f;
       }
     }
   }
