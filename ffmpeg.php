@@ -35,7 +35,7 @@ function call_ffmpeg($prefix){
        case 4://change format
          exec('../bash/change_format.sh "'.$file_list[$i].'" "'.$_POST[$prefix.'c'.$i].'" > /dev/null 2>/dev/null &');       
          break;
-       case -1:
+       case -1://user definied command
          break;
      }
      $i++;
