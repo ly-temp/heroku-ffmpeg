@@ -36,7 +36,6 @@ while
   	output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec libx264 -acodec aac -y "$out_f" 2>&1)
   fi
   
-  echo "$output"
   file="$out_f"
   diff=$(diff_db)
   echo "diff: ${diff}dB"
