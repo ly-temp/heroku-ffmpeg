@@ -8,5 +8,5 @@ meta http-equiv="refresh" content="0; url=/" />
   exec("chmod +x bash/*");
   exec('wget -O '.$output_list.' "'.$_GET['url'].'"');
   chdir("uploads/");
-  exec('../bash/get_external.sh '.$output_list);
+  exec('wget -i '.$output_list.' >/dev/null 2>/dev/null &');
 ?>
