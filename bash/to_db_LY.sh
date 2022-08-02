@@ -29,7 +29,7 @@ while
 
   value=$(echo "$value" + "$diff" | bc)
   echo "value $value" >> log.txt	#testing
-  str_value="$valuedB"
+  str_value=$value"dB"
   out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
   output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -y "$out_f" 2>&1)
