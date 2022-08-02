@@ -1,2 +1,2 @@
 #!/bin/bash
-file=$1
+#input [url list file]
