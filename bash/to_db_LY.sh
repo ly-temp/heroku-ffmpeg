@@ -28,6 +28,7 @@ while
   fi
 
   value=$(echo "$value" + "$diff" | bc)
+  echo "value $value" >> log.txt	#testing
   str_value=$value"dB"
   out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
