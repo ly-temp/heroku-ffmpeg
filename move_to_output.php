@@ -1,3 +1,8 @@
+<head>
+<meta http-equiv="refresh" content="0; url=/" />
+</head>
+<a href="/">home</a>
+
 <?php
   $output=shell_exec("cat complete.list");
   if(shell_exec("echo ".$output." | wc -w") != 0){
