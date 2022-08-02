@@ -19,6 +19,7 @@
 ?>
 <br>
 <a href="/output.list">output pure txt</a>
+<br>
 <a href="/uploads.list">upload pure txt</a>
 <br>
 <a href="/">back</a>
