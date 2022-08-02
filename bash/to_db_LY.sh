@@ -11,6 +11,7 @@ fi
 diff_db(){
 	current_db=($(ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2))
 	diff=$(echo "$target_db - $current_db" | bc)
+	echo "$current_db" >> log.txt #testing
 	echo "$diff"
 }
 
@@ -32,9 +33,9 @@ while
   output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -y "$out_f" 2>&1)
   
   #fix 3gp cannot select codec
-  if [ $(grep "Default encoder for format 3gp (codec amr_nb) is probably disabled." <<< "$output" | wc -w) -gt 0 ]; then
-  	output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec libx264 -acodec aac -y "$out_f" 2>&1)
-  fi
+  #if [ $(grep "Default encoder for format 3gp (codec amr_nb) is probably disabled." <<< "$output" | wc -w) -gt 0 ]; then
+  #	output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec libx264 -acodec aac -y "$out_f" 2>&1)
+  #fi
   
   echo "$output"
   
