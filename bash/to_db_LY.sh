@@ -31,7 +31,7 @@ while
   echo "value $value" >> log.txt	#testing
   str_value=$value"dB"
   out_f="${1%.*}[$str_value]$suffix"
-  echo "parameter: $str_value"
+  echo "parameter: $str_value" >> log.txt
   output=$(ffmpeg -i "$1" -filter:a "volume=$str_value" -y "$out_f" 2>&1)
   
   #fix 3gp cannot select codec
