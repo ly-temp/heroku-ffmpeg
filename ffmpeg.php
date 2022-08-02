@@ -20,7 +20,7 @@ function call_ffmpeg($prefix){
    //for($i = 0; !empty($_POST[$prefix.$i]); $i++){
    $i = 0;
    while(!empty($_POST[$prefix.$i])){
-     //echo $i.":".$file_list[$i]."->".$_POST[$prefix.'c'.$i].'<br>';
+     echo $i.":".$file_list[$i]."->".$_POST[$prefix.'c'.$i].'<br>';
      switch($_POST[$prefix.$i]){
        //case 1://no action
          //break;
