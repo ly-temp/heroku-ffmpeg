@@ -33,6 +33,7 @@ function call_ffmpeg($prefix){
          exec('../bash/to_db_LY.sh "'.$file_list[$i].'" "'.$_POST[$prefix.'c'.$i].'" > /dev/null 2>/dev/null &');
          break;
        case 4://change format
+         exec('../bash/change_format.sh "'.$file_list[$i].'" "'.$_POST[$prefix.'c'.$i].'" > /dev/null 2>/dev/null &');       
          break;
        case -1:
          break;
