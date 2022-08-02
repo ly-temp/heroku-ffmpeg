@@ -1,3 +1,8 @@
+<head>
+meta http-equiv="refresh" content="0; url=/" />
+</head>
+<a href="/">home</a>
+
 <?php
 exec("chmod +x bash/*.sh");
  //prefix u: upload folder
