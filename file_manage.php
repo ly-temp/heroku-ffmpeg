@@ -21,5 +21,9 @@
 <a href="/output.list">output pure txt</a>
 <br>
 <a href="/uploads.list">upload pure txt</a>
+<br>
+<a href="get_full_url_list.php?type=output">output full url</a>
+<br>
+<a href="get_full_url_list.php?type=uploads">uploads full url</a>
 <br><br>
 <a href="/">back</a>
