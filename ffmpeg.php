@@ -9,6 +9,7 @@ exec("chmod +x bash/*.sh");
  //       o: output folder
 call_ffmpeg("u");
 call_ffmpeg("o");
+ob_flush();
 sleep($_POST["timeout"]);
  
 function call_ffmpeg($prefix){
