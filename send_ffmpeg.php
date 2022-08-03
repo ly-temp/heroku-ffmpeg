@@ -76,6 +76,7 @@ for($i = 0; $i < count($output); $i++){
 	}
 	function sync_all_input(prefix, source_id){
 		var value = document.getElementById(source_id).value;
+		alert(value);
 		var i = 0;
 		var ele;
 		while(ele = document.getElementById(prefix+'c'+i)){
