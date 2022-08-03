@@ -11,9 +11,11 @@ echo $sep."uploads".$sep."<br>";
 
 ?>
 <select id="uploads_all" onchange="sync_all_select('u','uploads_all')">
+all uploads:
 <?php
     echo $options;
 ?>
+<input type="text" id="uploads_all_c" onchange="sync_all_input('u','uploads_all_c')">
 </select><br>
 <?php
 echo '<form action="/ffmpeg.php"  method="post">';
@@ -68,8 +70,21 @@ for($i = 0; $i < count($output); $i++){
 		    i++;
 		};
 	}
-    function changeSelected(id, index){
-        var element = document.getElementById(id);
-        element.selectedIndex = index;
-    }
+	function changeSelected(id, index){
+		var element = document.getElementById(id);
+		element.selectedIndex = index;
+	}
+	function sync_all_input(prefix, source_id){
+		var value = document.getElementById(source_id).value;
+		var i = 0;
+		var ele;
+		while(ele = document.getElementById(prefix+'c'+i)){
+		    ele.value = value;
+		    i++;
+		};	
+	}
+	function changeInputBox(id, value){
+		var element = document.getElementById(id);
+		element.value = value;	
+	}	
 </script>
