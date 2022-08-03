@@ -14,7 +14,7 @@ echo $sep."uploads".$sep."<br>";
 <?php
     echo $options;
 ?>
-</select>
+</select><br>
 <?php
 echo '<form action="/ffmpeg.php"  method="post">';
 $output = shell_exec("ls ".$target_dir." | tee uploads.list");
