@@ -4,6 +4,7 @@
 <a href="/">home</a>
 
 <?php
+ob_start();
 exec("chmod +x bash/*.sh");
  //prefix u: upload folder
  //       o: output folder
