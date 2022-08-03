@@ -38,7 +38,7 @@ function print_options($prefix, $output){
 //$i->option
 //c$i->command/value
 for($i = 0; $i < count($output); $i++){
-    echo $output[$i].'<select name="'.$prefix.$i.'">
+    echo $output[$i].'<select name="'.$prefix.$i.'" id="'.$prefix.$i.'">
     <option value="1">no action</option>
     <option value="2">nokia</option>
     <option value="3">audio to db</option>
@@ -51,6 +51,15 @@ for($i = 0; $i < count($output); $i++){
 }
 ?>
 <script>
+    function sync_all_select(prefix, source_id){
+        var index = document.getElementById(source_id).selectedIndex;
+        var i = 0;
+        var this_id;
+        while(this_id = prefix+i; document.getElementById(this_id)){
+            alert(this_id + "exist");
+            i++;
+        }
+    }
     function changeSelected(id, index){
         var element = document.getElementById(id);
         element.selectedIndex = index;
