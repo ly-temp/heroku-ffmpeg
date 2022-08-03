@@ -11,6 +11,7 @@ exec("chmod +x bash/*.sh");
 call_ffmpeg("u");
 call_ffmpeg("o");
 ob_flush();
+flush();
 sleep($_POST["timeout"]);
  
 function call_ffmpeg($prefix){
