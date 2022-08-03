@@ -17,11 +17,23 @@ all uploads:
 ?>
 <input type="text" id="uploads_all_c" onchange="sync_all_input('u','uploads_all_c')">
 </select><br>
+
 <?php
 echo '<form action="/ffmpeg.php"  method="post">';
 $output = shell_exec("ls ".$target_dir." | tee uploads.list");
 handle_ls("u", $output);
 
+?>
+<br>
+<select id="output_all" onchange="sync_all_select('o','output_all')">
+all output:
+<?php
+    echo $options;
+?>
+<input type="text" id="output_all_c" onchange="sync_all_input('o','output_all_c')">
+</select><br>
+
+<?php
 exec("mkdir -p ".$out_dir);
 echo $sep."output".$sep."<br>";
 $output = shell_exec("ls ".$out_dir." | tee output.list");
