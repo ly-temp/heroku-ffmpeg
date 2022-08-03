@@ -1,9 +1,21 @@
 <?php
 $target_dir = "./uploads";
 $out_dir = "./output";
+$options = '<option value="1">no action</option>
+    <option value="2">nokia</option>
+    <option value="3">audio to db</option>
+    <option value="4">change format</option>
+    <option value="-1">command</option>';
 $sep = "~~~~~~~~~";
 echo $sep."uploads".$sep."<br>";
 
+?>
+<select id="uploads_all" onchange="sync_all_select('u','uploads_all')">
+<?php
+    echo $options;
+?>
+</select>
+<?php
 echo '<form action="/ffmpeg.php"  method="post">';
 $output = shell_exec("ls ".$target_dir." | tee uploads.list");
 handle_ls("u", $output);
@@ -39,11 +51,7 @@ function print_options($prefix, $output){
 //c$i->command/value
 for($i = 0; $i < count($output); $i++){
     echo $output[$i].'<select name="'.$prefix.$i.'" id="'.$prefix.$i.'">
-    <option value="1">no action</option>
-    <option value="2">nokia</option>
-    <option value="3">audio to db</option>
-    <option value="4">change format</option>
-    <option value="-1">command</option>
+    '.$GLOBALS['options'].'
     <input type="text" name="'.$prefix.'c'.$i.'">
     </select><br>';
   }
@@ -51,17 +59,17 @@ for($i = 0; $i < count($output); $i++){
 }
 ?>
 <script>
-    function sync_all_select(prefix, source_id){
-        var index = document.getElementById(source_id).selectedIndex;
-        var i = 0;
-        var this_id;
-        while(this_id = prefix+i; document.getElementById(this_id)){
-            alert(this_id + "exist");
-            i++;
-        }
-    }
+	function sync_all_select(prefix, source_id){
+		var index = document.getElementById(source_id).selectedIndex;
+		var i = 0;
+		var ele;
+		while(ele = document.getElementById(prefix+i)){
+		    ele.selectedIndex = index;
+		    i++;
+		};
+	}
     function changeSelected(id, index){
         var element = document.getElementById(id);
         element.selectedIndex = index;
-    };
+    }
 </script>
