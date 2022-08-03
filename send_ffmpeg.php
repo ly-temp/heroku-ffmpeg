@@ -54,7 +54,7 @@ function print_options($prefix, $output){
 for($i = 0; $i < count($output); $i++){
     echo $output[$i].'<select name="'.$prefix.$i.'" id="'.$prefix.$i.'">
     '.$GLOBALS['options'].'
-    <input type="text" name="'.$prefix.'c'.$i.'">
+    <input type="text" name="'.$prefix.'c'.$i.'" id="'.$prefix.'c'.$i.'">
     </select><br>';
   }
 
@@ -70,16 +70,17 @@ for($i = 0; $i < count($output); $i++){
 		    i++;
 		};
 	}
+	
 	function changeSelected(id, index){
 		var element = document.getElementById(id);
 		element.selectedIndex = index;
 	}
+	
 	function sync_all_input(prefix, source_id){
 		var value = document.getElementById(source_id).value;
 		var i = 0;
 		var ele;
 		while(ele = document.getElementById(prefix+'c'+i)){
-		alert(i);
 		    ele.value = value;
 		    i++;
 		};	
@@ -87,5 +88,5 @@ for($i = 0; $i < count($output); $i++){
 	function changeInputBox(id, value){
 		var element = document.getElementById(id);
 		element.value = value;	
-	}	
+	}
 </script>
