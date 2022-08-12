@@ -1,6 +1,6 @@
 {
-  "name": " heroku-ffmpeg",
-  "description": " heroku-ffmpeg",
+  "name": "heroku-ffmpeg",
+  "description": "heroku-ffmpeg",
   "repository": "https://github.com/laiyuantemp/heroku-ffmpeg",
   "logo": "",
   "keywords": ["heroku"],
