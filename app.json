@@ -1,0 +1,23 @@
+{
+  "name": " heroku-ffmpeg",
+  "description": " heroku-ffmpeg",
+  "repository": "https://github.com/laiyuantemp/heroku-ffmpeg",
+  "logo": "",
+  "keywords": ["heroku"],
+
+  "website": "",
+  "repository": "",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    },
+    {
+      "url": "https://github.com/laiyuantemp/heroku-buildpack-apt.git"
+    },
+    {
+      "url": "https://github.com/laiyuantemp/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
+  
+ }
