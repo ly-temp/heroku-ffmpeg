@@ -15,6 +15,7 @@
 <a href="move_to_output.php">move output file</a>
 <br>
 <a href="file_manage.php">download / manage</a>
+<br>
 <a href="download_external.php">download_external.php?url=</a>
 </body>
 </html>
