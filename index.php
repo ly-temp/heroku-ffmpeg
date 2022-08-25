@@ -17,5 +17,7 @@
 <a href="file_manage.php">download / manage</a>
 <br>
 <a href="download_external.php">download_external.php?url=</a>
+<br>
+<a href="/cmd.php">cmd</a>
 </body>
 </html>
