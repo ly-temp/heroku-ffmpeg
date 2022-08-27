@@ -7,3 +7,6 @@
       echo "fail";
   }
 ?>
+<br>
+<a href="/file_manage.php">file</a>
+<a href="/">back</a>
