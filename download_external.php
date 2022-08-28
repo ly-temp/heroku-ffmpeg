@@ -11,6 +11,6 @@
 
   exec("chmod +x bash/*");
   exec('wget -O '.$output_list.' "'.$url.'"');
-  exec("bash/download_external.sh >/dev/null 2>/dev/null &");
+  exec("bash/download_external.sh");
 
 ?>
