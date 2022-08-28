@@ -2,7 +2,7 @@
   if (move_uploaded_file($_FILES['file']['tmp_name'], "./external.list")) {
       echo "success";
       exec("chmod +x bash/*");
-      exec("bash/download_external.sh");    
+      exec("bash/download_external.sh >/dev/null 2>/dev/null &");    
   }else{
       echo "fail";
   }
