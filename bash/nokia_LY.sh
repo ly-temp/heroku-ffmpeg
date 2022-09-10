@@ -11,7 +11,7 @@ fi
 echo "type: $type"
 
 diff_db(){
-	current_db=($(ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2 | tee -a log.txt))
+	current_db=($(ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2))
 	#bc
 	#diff=$(echo "$target_db - $current_db" | bc)
 	#awk
