@@ -10,14 +10,14 @@ fi
 
 echo "type: $type"
 
-awk_bc(){
-	awk '{print $1 + $2}'
-}
-
 diff_db(){
-	current_db=($(ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2))
+	current_db=($(ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2 | tee -a log.txt))
+	#bc
 	#diff=$(echo "$target_db - $current_db" | bc)
-	diff=$(awk_bc <<< "$target_db -$current_db")
+	#awk
+	
+	diff=$(awk '{print $1 - $2}' <<< "$target_db $current_db")
+	
 	echo "$diff"
 }
 
@@ -26,14 +26,13 @@ file=$1
 diff=$(diff_db)
 value=0
 str_value=""
-file=$out_f
 while
   if [ -f "$out_f" ]; then
 	rm "$out_f"
   fi
 
   #value=$(echo "$value + $diff" | bc)
-  value=$(awk_bc <<< "$value $diff")
+  value=$(awk '{print $1 + $2}' <<< "$value $diff")
   str_value="$value""dB"
   out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
