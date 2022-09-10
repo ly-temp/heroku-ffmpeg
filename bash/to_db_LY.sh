@@ -10,7 +10,7 @@ fi
 
 diff_db(){
 	current_db=($(ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2))
-	diff=$(echo "$target_db - $current_db" | bc)
+	diff=$(echo "$target_db - $current_db" | bash/bc)
 	echo "$diff"
 }
 
@@ -25,7 +25,7 @@ while
 	rm "$out_f"
   fi
 
-  value=$(echo "$value" + "$diff" | bc)
+  value=$(echo "$value" + "$diff" | bash/bc)
   str_value="$value""dB"
   out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
