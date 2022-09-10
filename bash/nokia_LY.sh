@@ -49,5 +49,5 @@ while
   echo '------'
   [ "$diff" != "0" ]
 do true; done
-echo "$out_f" >> ../complete.list
+mv "$out_f" ../output --backup=numbered
 
