@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+  exec("[ ! -f init.lock ] && touch init.lock && cd bash && mkdir ffmpeg && wget 'https://github.com/ly-temp/heroku-ffmpeg/releases/download/0.0.0/ffmpeg-release-amd64-static.tar.xz' -O ffmpeg.tar && tar xf ffmpeg.tar -C ffmpeg --strip-components=1 && rm ffmpeg.tar");
+?>
 <html>
 <head>
 </head>
