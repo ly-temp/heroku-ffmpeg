@@ -9,7 +9,7 @@ else
 fi
 
 diff_db(){
-	current_db=($(ffmpeg/ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2))
+	current_db=($(../bash/ffmpeg/ffmpeg -i "$file" -filter:a volumedetect -f null /dev/null 2>&1 | grep "mean_volume:" | grep -o ":.*" | cut -d' ' -f2))
 	#diff=$(echo "$target_db - $current_db" | bc)
 	diff=$(awk '{print $1 - $2}' <<< "$target_db $current_db")
 	echo "$diff"
@@ -30,11 +30,11 @@ while
   str_value="$value""dB"
   out_f="${1%.*}[$str_value]$suffix"
   echo "parameter: $str_value"
-  output=$(ffmpeg/ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec copy -y "$out_f" 2>&1)
+  output=$(../bash/ffmpeg/ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec copy -y "$out_f" 2>&1)
   
   #fix 3gp cannot select codec
   #if [ $(grep -E "(Default encoder for format 3gp \(codec amr_nb\) is probably disabled.|Conversion failed!)" <<< "$output" | wc -w) -gt 0 ]; then
-  #	output=$(ffmpeg/ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec libx264 -acodec aac -y "$out_f" 2>&1)
+  #	output=$(../bash/ffmpeg/ffmpeg -i "$1" -filter:a "volume=$str_value" -vcodec libx264 -acodec aac -y "$out_f" 2>&1)
   #fi
   
   file="$out_f"
